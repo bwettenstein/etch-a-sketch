@@ -1,6 +1,5 @@
 const gridContainer = document.querySelector('.container');
 
-// FIGURE OUT HOW TO MAKE THE FIRST ROW disappear
 let createGrid = (size=16) => {
     for (let v = 0; v < size; v++) {
         let column = document.createElement('div');
@@ -21,4 +20,21 @@ let createGrid = (size=16) => {
 
 createGrid();
 
+// function createGrid(size){
+//     for (i = 0; i < size; i++){
+//         for (x = 0; x < size; x++){
+//             let gridBox = document.createElement('div');
+//             container.appendChild(gridBox);
+//             gridBox.className = 'grid';
+//         }   
+//     }
+//     add event listener to each div in grid
+//     const divs = document.querySelectorAll('.container div');
+//     divs.forEach( function(divs){
+//         divs.addEventListener('mouseover', function(e){
+//             e.target.classList.add('hover');
+//         });
+//     });  
+// }
+// createGrid(16);
 
