@@ -1,7 +1,7 @@
 .container {
     display: flex;
 }
-.row {
+.grid {
     border-style: solid;
     padding: 5px;
     width: 20px;
@@ -9,7 +9,10 @@
     max-width: 50px;
     max-height: 50px;
 }
-.row:hover {
+.grid:hover {
     background-color: red;
+}
+#row {
+    border-style: none;
 }
 
