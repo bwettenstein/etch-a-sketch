@@ -1,12 +1,12 @@
 const grid = document.querySelector('#grid-container');
 const clearBoardButton = document.querySelector('#clearBoard');
-const resizeBoard = document.querySelector('#resizeBoard')
+const resizeBoardButton = document.querySelector('#resizeBoard')
 // Can maybe delete these 
-const column = document.querySelector('#column');
-const row = document.querySelector('#row');
+// const column = document.querySelector('#column');
+// const row = document.querySelector('#row');
+const defaultGridSize = 16;
 
 function createGrid(gridSize) {
-    //let totalTiles = gridSize * gridSize;
     // Making the column
     for (let i = 0; i<gridSize; i++) {
         let newColumn = document.createElement('div');
@@ -17,21 +17,19 @@ function createGrid(gridSize) {
             let newRow = document.createElement('div');
             newRow.className = 'tile';
             newRow.id = 'row';
-            newRow.addEventListener("mouseover", colorOnHover)
+            newRow.addEventListener("mouseover", changeColorOnHover)
             newColumn.appendChild(newRow);
         }
         grid.appendChild(newColumn);
     }
 }
-createGrid(16);
-console.log(grid.childNodes)
-console.log(grid.lastChild)
+createGrid(defaultGridSize);
 
 const tile = document.getElementsByClassName('tile');
 clearBoardButton.addEventListener("click", clearBoard);
-resizeBoard.addEventListener("click", (deleteGrid));
+resizeBoardButton.addEventListener("click", resizeBoard);
 
-function colorOnHover() {
+function changeColorOnHover() {
     this.style.backgroundColor = 'red';
 }
 
@@ -46,5 +44,20 @@ function deleteGrid() {
         grid.removeChild(grid.lastChild);
     }
 }
-
+function promptGridSize() {
+    let newGridSize = prompt("Enter new grid size", "16");
+    if (newGridSize > 0) {
+        return newGridSize;
+    }
+    else {
+        alert("Invalid response");
+    }
+}
+function resizeBoard() {
+    let newGridSize = promptGridSize();
+    if (newGridSize != null) {
+        deleteGrid();
+        createGrid(newGridSize);
+    }
+}
 
