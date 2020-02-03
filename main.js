@@ -1,40 +1,32 @@
-const gridContainer = document.querySelector('.container');
+const grid = document.querySelector('#grid-container');
+const column = document.querySelector('#column');
+const row = document.querySelector('#row');
+let tile = document.getElementsByClassName('.tile');
 
-let createGrid = (size=16) => {
-    for (let v = 0; v < size; v++) {
-        let column = document.createElement('div');
-        //column.id = 'col' + (v+1);
-        column.id = 'containerGrid';
-        column.class = 'container-grid';
-    
-        for(let g = 0; g<size; g++) {
-            let row = document.createElement('div');
-            //row.id = 'row' + (g+1); 
-            row.id = 'grid';
-            row.className = 'grid';
-            column.appendChild(row);
+function createGrid(gridSize) {
+    //let totalTiles = gridSize * gridSize;
+    // Making the column
+    for (let i = 0; i<gridSize; i++) {
+        let newColumn = document.createElement('div');
+        newColumn.className = 'tile';
+        newColumn.id = 'column'
+    // Making the row
+        for (let j=0; j<gridSize; j++) {
+            let newRow = document.createElement('div');
+            newRow.className = 'tile';
+            newRow.id = 'row';
+            newRow.addEventListener("mouseover", changeColor)
+            newColumn.appendChild(newRow);
         }
-        gridContainer.appendChild(column);
+        grid.appendChild(newColumn);
     }
 }
 
-createGrid();
+function changeColor() {
+    this.style.backgroundColor = 'red';
+}
 
-// function createGrid(size){
-//     for (i = 0; i < size; i++){
-//         for (x = 0; x < size; x++){
-//             let gridBox = document.createElement('div');
-//             container.appendChild(gridBox);
-//             gridBox.className = 'grid';
-//         }   
-//     }
-//     add event listener to each div in grid
-//     const divs = document.querySelectorAll('.container div');
-//     divs.forEach( function(divs){
-//         divs.addEventListener('mouseover', function(e){
-//             e.target.classList.add('hover');
-//         });
-//     });  
-// }
-// createGrid(16);
+createGrid(4);
+console.log(tile)
+grid.addEventListener("mouseover", changeColor)
 

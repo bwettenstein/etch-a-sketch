@@ -9,12 +9,16 @@
     <title>Etch a Sketch</title>
 </head>
 <body>
-    <div id="container" class="container">
+    <div id="button-container" class="button-container">
+        
+        <div id="buttons">
+            <input type="submit" id="resizeBoard" value="Resize Board">
+            <input type="submit" id="clearBoard" value="Clear board">
+            <input type="color" id="chooseColor">
+        </div>
     </div>
-    <div id="askUser">
-        <input type="submit" id="resizeBoard" value="Resize Board">
-        <input type="submit" id="clearBoard" value="Clear board">
-        <input type="color" id="chooseColor">
+    <div class="grid-container" id="grid-container">
+        <!-- Tiles will be generated through Javascript -->
     </div>
 </body>
 </html>
