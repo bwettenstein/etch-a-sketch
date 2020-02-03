@@ -28,5 +28,4 @@ function changeColor() {
 
 createGrid(4);
 console.log(tile)
-grid.addEventListener("mouseover", changeColor)
 
