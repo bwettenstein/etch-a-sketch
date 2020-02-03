@@ -1,7 +1,9 @@
 const grid = document.querySelector('#grid-container');
+const clearBoardButton = document.querySelector('#clearBoard');
+const resizeBoard = document.querySelector('#resizeBoard')
+// Can maybe delete these 
 const column = document.querySelector('#column');
 const row = document.querySelector('#row');
-let tile = document.getElementsByClassName('.tile');
 
 function createGrid(gridSize) {
     //let totalTiles = gridSize * gridSize;
@@ -15,17 +17,34 @@ function createGrid(gridSize) {
             let newRow = document.createElement('div');
             newRow.className = 'tile';
             newRow.id = 'row';
-            newRow.addEventListener("mouseover", changeColor)
+            newRow.addEventListener("mouseover", colorOnHover)
             newColumn.appendChild(newRow);
         }
         grid.appendChild(newColumn);
     }
 }
+createGrid(16);
+console.log(grid.childNodes)
+console.log(grid.lastChild)
 
-function changeColor() {
+const tile = document.getElementsByClassName('tile');
+clearBoardButton.addEventListener("click", clearBoard);
+resizeBoard.addEventListener("click", (deleteGrid));
+
+function colorOnHover() {
     this.style.backgroundColor = 'red';
 }
 
-createGrid(4);
-console.log(tile)
+function clearBoard() {
+    for(let x = 0; x<tile.length; x++) {
+        tile[x].style.backgroundColor = 'white';
+    }
+}
+// Used when resizing the grid
+function deleteGrid() {
+    while (grid.hasChildNodes()) {
+        grid.removeChild(grid.lastChild);
+    }
+}
+
 
