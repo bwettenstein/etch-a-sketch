@@ -1,10 +1,10 @@
 const grid = document.querySelector('#grid-container');
 const clearBoardButton = document.querySelector('#clearBoard');
 const resizeBoardButton = document.querySelector('#resizeBoard')
-// Can maybe delete these 
-// const column = document.querySelector('#column');
-// const row = document.querySelector('#row');
+const chooseColor = document.querySelector('#chooseColor');
+
 const defaultGridSize = 16;
+let gridColor = "red";
 
 function createGrid(gridSize) {
     // Making the column
@@ -30,7 +30,7 @@ clearBoardButton.addEventListener("click", clearBoard);
 resizeBoardButton.addEventListener("click", resizeBoard);
 
 function changeColorOnHover() {
-    this.style.backgroundColor = 'red';
+    this.style.backgroundColor = gridColor;
 }
 
 function clearBoard() {
