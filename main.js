@@ -32,12 +32,6 @@ function createGrid(gridSize) {
     }
 }
 
-
-
-function changeColorOnHover() {
-    this.style.backgroundColor = defaultGridColor;
-}
-
 function clearBoard() {
     for(let x = 0; x<tile.length; x++) {
         tile[x].style.backgroundColor = clearGridColor;
@@ -66,8 +60,13 @@ function resizeBoard() {
     }
 }
 
-function changeGridBackgroundColor(event) {
+function changeColorOnHover(color=defaultGridColor) {
+    this.style.backgroundColor = defaultGridColor;
+}
+
+function changeGridBackgroundColor(newBackgroundColor) {
     for(let x = 0; x<tile.length; x++) {
-        tile[x].style.backgroundColor = event.target.value;
+        tile[x].style.backgroundColor = newBackgroundColor.target.value;
     }
 }
+
