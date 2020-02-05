@@ -11,7 +11,6 @@ clearBoardButton.addEventListener('click', clearBoard);
 resizeBoardButton.addEventListener('click', resizeBoard);
 chooseGridBackgroundColor.addEventListener('change', changeGridBackgroundColor, false);
 
-
 createGrid(defaultGridSize);
 
 function createGrid(gridSize) {

@@ -1,7 +1,5 @@
 body {
-    /* background-image: url(images/zwartevilt_@2X.jpg); */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    /* background-color: #ACBEA3; */
     background-color: #c7d7fb;
 }
 .header-container{
@@ -10,7 +8,6 @@ body {
 }
 .title {
     text-align: center;
-    /* color: white; */
     font-size: 30px;
     font-weight: bolder;
     color: #3c284b;
@@ -29,13 +26,11 @@ body {
     background-color: #ffffff;
 }
 #column {
-    /* flex-direction: column; */
     width: 35px;
     height: 30px;
 }
 #row {
     border: 2px solid #3c284b;
-    /* border: 2px solid #fffffff3;  */
     width: 35px;
     height: 30px;
 }
